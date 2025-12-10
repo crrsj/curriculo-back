@@ -63,7 +63,7 @@ public class CurriculoService {
         cabecalho.addCell(celulaCabecalho);
         document.add(cabecalho);
 
-        // 2. INFORMAÇÕES DE CONTATO
+     
         document.add(Chunk.NEWLINE);
 
         PdfPTable contato = new PdfPTable(3);
@@ -77,7 +77,7 @@ public class CurriculoService {
 
         document.add(contato);
 
-        // 3. RESUMO PROFISSIONAL (se existir)
+       
         if (cv.getResumoProfissional() != null && !cv.getResumoProfissional().isEmpty()) {
             document.add(Chunk.NEWLINE);
             adicionarSecao(document, "RESUMO PROFISSIONAL", fonteSubtitulo);
@@ -87,7 +87,7 @@ public class CurriculoService {
             document.add(resumo);
         }
 
-        // 4. EXPERIÊNCIAS PROFISSIONAIS
+        //  EXPERIÊNCIAS PROFISSIONAIS
         if (cv.getExperiencias() != null && !cv.getExperiencias().isEmpty()) {
             document.add(Chunk.NEWLINE);
             adicionarSecao(document, "EXPERIÊNCIA PROFISSIONAL", fonteSubtitulo);
@@ -97,7 +97,7 @@ public class CurriculoService {
             }
         }
 
-        // 5. FORMAÇÃO ACADÊMICA
+        
         if (cv.getFormacoes() != null && !cv.getFormacoes().isEmpty()) {
             document.add(Chunk.NEWLINE);
             adicionarSecao(document, "FORMAÇÃO ACADÊMICA", fonteSubtitulo);
@@ -107,7 +107,7 @@ public class CurriculoService {
             }
         }
 
-        // 6. HABILIDADES
+      
         if (cv.getHabilidades() != null && !cv.getHabilidades().isEmpty()) {
             document.add(Chunk.NEWLINE);
             adicionarSecao(document, "HABILIDADES", fonteSubtitulo);
@@ -149,7 +149,7 @@ public class CurriculoService {
         return baos.toByteArray();
     }
 
-    // ========== MÉTODOS AUXILIARES ==========
+   
 
     private void adicionarCelulaContato(PdfPTable tabela, String texto, Font fonte) {
         PdfPCell cell = new PdfPCell(new Paragraph(texto, fonte));
