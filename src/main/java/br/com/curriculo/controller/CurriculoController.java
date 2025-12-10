@@ -38,13 +38,13 @@ public class CurriculoController {
     })
     public ResponseEntity<byte[]> generateCv(@RequestBody Curriculo curriculo) {
         try {
-            // Validar dados básicos
+          
             if (curriculo.getNome() == null || curriculo.getNome().trim().isEmpty()) {
                 return ResponseEntity.badRequest()
                         .body("Nome é obrigatório".getBytes());
             }
 
-            // Gerar PDF
+           
             byte[] pdfBytes = curriculoService.gerarPdf(curriculo);
             // Configurar headers para download
             HttpHeaders headers = new HttpHeaders();
@@ -62,7 +62,7 @@ public class CurriculoController {
         }
     }
 
-    // Endpoint simples para testar se API está funcionando
+   
     @GetMapping("/teste")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "endpoint responsável para testar o funcionamento da api.")
